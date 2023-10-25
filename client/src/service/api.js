@@ -85,7 +85,7 @@ const ProcessError = async (error) => {
             //     return Promise.reject(error)
             // }
         } else {
-            console.log("ERROR IN RESPONSE: ", error.toJSON());
+            // console.log("ERROR IN RESPONSE: ", error.toJSON());
             return {
                 isError: true,
                 msg: API_NOTIFICATION_MESSAGES.responseFailure,
@@ -94,7 +94,7 @@ const ProcessError = async (error) => {
         }
     } else if (error.request) { 
         // The request was made but no response was received
-        console.log("ERROR IN RESPONSE: ", error.toJSON());
+        // console.log("ERROR IN RESPONSE: ", error.toJSON());
         return {
             isError: true,
             msg: API_NOTIFICATION_MESSAGES.requestFailure,
@@ -102,7 +102,7 @@ const ProcessError = async (error) => {
         }
     } else { 
         // Something happened in setting up the request that triggered an Error
-        console.log("ERROR IN RESPONSE: ", error.toJSON());
+        // console.log("ERROR IN RESPONSE: ", error.toJSON());
         return {
             isError: true,
             msg: API_NOTIFICATION_MESSAGES.networkError,
@@ -120,10 +120,10 @@ for (const [key, value] of Object.entries(SERVICE_URLS)) {
             url: value.url,
             data: value.method === 'DELETE' ? '' : body,
             responseType: value.responseType,
-            headers: {
-                authorization: getAccessToken(),
-            },
-            TYPE: getType(value, body),
+            // headers: {
+            //     authorization: getAccessToken(),
+            // },
+            // TYPE: getType(value, body),
             onUploadProgress: function(progressEvent) {
                 if (showUploadProgress) {
                     let percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
