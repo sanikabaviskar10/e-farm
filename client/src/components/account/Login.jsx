@@ -49,6 +49,7 @@ const Text = styled(Typography)`
        font-size: 16px;
 
 `
+<<<<<<< HEAD
 const Error = styled(Typography)`
     font-size: 10px;
     color: #ff6161;
@@ -56,18 +57,31 @@ const Error = styled(Typography)`
     margin-top: 10px;
     font-weight: 600;
 `
+=======
+const signupInitialValues = {
+    name: '',
+    username: '',
+    password: ''
+}
+
+>>>>>>> 6d7500c4d54aaffd82f2d06f9fc845d12831243b
 
 const Login = () => {
 
-     const imageURL = 'https://www.sesta.it/wp-content/uploads/2021/03/logo-blog-sesta-trasparente.png';
+     const imageURL = 'https://www.shutterstock.com/shutterstock/photos/1608823363/display_1500/stock-vector-e-farm-logo-symbol-of-agricultural-technology-1608823363.jpg';
      
      const[account,toggleAccount] = useState('login');
+<<<<<<< HEAD
      const [signup, setSignup] = useState(signupInitialValues);
      const [error, showError] = useState('');
+=======
+     const[signup,setSignup] = useState(signupInitialValues);
+>>>>>>> 6d7500c4d54aaffd82f2d06f9fc845d12831243b
 
      const toggleSignup = () => {
         account == 'Signup' ? toggleAccount('login') : toggleAccount('Signup')
      }
+<<<<<<< HEAD
 
      const signupUser = async () => {
         let response = await API.userSignup(signup);
@@ -79,6 +93,15 @@ const Login = () => {
             showError('Something went wrong! please try again later');
         }
     }
+=======
+     
+     const onInputChange = (e) => {
+        setSignup({ ...signup, [e.target.name]: e.target.value});
+     }
+
+
+
+>>>>>>> 6d7500c4d54aaffd82f2d06f9fc845d12831243b
 
     return (
         <Component>
@@ -98,11 +121,19 @@ const Login = () => {
              </Wrapper> 
             :
             <Wrapper>
+<<<<<<< HEAD
                  <TextField variant = "standard" label="Enter name"/>
                  <TextField variant = "standard" label="Enter username"/>
                  <TextField variant = "standard" label="Enter password"/>
                  <SignupButton onClick={() => signupUser()}>Signup</SignupButton>
                  <Text>OR</Text>
+=======
+                 <TextField variant = "standard" onChange={(e) => onInputChange(e)} name='name' label="Enter name"/>
+                 <TextField variant = "standard" onChange={(e) => onInputChange(e)} name='username' label="Enter username"/>
+                 <TextField variant = "standard"  onChange={(e) => onInputChange(e)} name ='password' label="Enter password"/>
+                 <SignupButton>Signup</SignupButton>
+                 <Text style={{textAlign:'center'}}>OR</Text>
+>>>>>>> 6d7500c4d54aaffd82f2d06f9fc845d12831243b
                  <LoginButton variant="contained" onClick={()=>toggleSignup()}>Already have an account</LoginButton>
             </Wrapper>
           }
