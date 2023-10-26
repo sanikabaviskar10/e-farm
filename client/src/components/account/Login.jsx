@@ -4,7 +4,10 @@ import { TextField, Box, Button, Typography, styled } from '@mui/material';
 // import { useNavigate } from 'react-router-dom';
 
 import { API } from '../../service/api';
-// import { DataContext } from '../../context/DataProvider';
+//import { DataContext } from '../../context/DataProvider';
+
+ //import { useNavigate } from 'react-router-dom';
+
 
 const Component = styled(Box)`
     width: 400px;
@@ -77,7 +80,7 @@ const Login = ({ isUserAuthenticated }) => {
     const [error, showError] = useState('');
     const [account, toggleAccount] = useState('login');
 
-    // const navigate = useNavigate();
+     //const navigate = useNavigate();
     // const { setAccount } = useContext(DataContext);
 
     const imageURL = 'https://www.sesta.it/wp-content/uploads/2021/03/logo-blog-sesta-trasparente.png';
