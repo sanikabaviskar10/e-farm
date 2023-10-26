@@ -5,7 +5,6 @@ const colors = require("colors");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 
-//env config
 dotenv.config();
 
 //router import
