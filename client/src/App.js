@@ -1,27 +1,23 @@
-import Header from "./components/Header";
-import { Routes, Route } from "react-router-dom";
-import Blogs from "./pages/Blogs";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import UserBlogs from "./pages/UserBlogs";
-import CreateBlog from "./pages/CreateBlog";
-import BlogDetails from "./pages/BlogDetails";
-import { Toaster } from "react-hot-toast";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from "./pages/home/Home";
+import Hotel from "./pages/hotel/Hotel";
+import List from "./pages/list/List";
+import Login from "./pages/login/Login";
+
 function App() {
   return (
-    <>
-      <Header />
-      <Toaster />
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Blogs />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/my-blogs" element={<UserBlogs />} />
-        <Route path="/blog-details/:id" element={<BlogDetails />} />
-        <Route path="/create-blog" element={<CreateBlog />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Home/>}/>
+        <Route path="/hotels" element={<List/>}/>
+        <Route path="/hotels/:id" element={<Hotel/>}/>
+        <Route path="/login" element={<Login/>}/>
       </Routes>
-    </>
+    </BrowserRouter>
   );
 }
 
